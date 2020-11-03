@@ -1,0 +1,38 @@
+Saqif Abedin
+SoftDev
+LJ00: Le Voyage de Learnination avec Mongo, Première Phase
+
+Database: structured way to store and access Data
+NoSQL Database: related tables of Data  
+    -organized, but not in rows and columns
+MongoDB is a NoSQL documentDB: data is stored as documents
+    -documents are stored in collection of documents
+
+Documents: A way tp prganize and store data as a set of field-value pairs
+    -field is unique identifier for data points
+    -value is data related to identifier
+    example:
+        "name" : "Saqif"
+
+Collection: organized store of documents, usually with common fields between documents  
+    example:
+        {
+            "name"  : "Saqif"
+            "title" : "Student"
+            "age"   : 17
+        }
+    *Database contains a bunch of collections*
+
+Atlas is cloud Database with MongoDB at core
+Cluster Deployment
+    Clusters: group of servers that store data
+            servers are configured in a replica set
+    Replica Set: a few connected MongoDB instances that store the same data
+    Instance: single machine (local or cloud) running a certain software
+    *ensures that if something happens to one machine in the replica set, data will be intact*
+Services
+    -manage cluster creation
+    -run and maintain database deployment
+    -use cloud service provider of choice
+    -experiment with new tools and features
+
