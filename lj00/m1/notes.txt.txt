@@ -35,4 +35,3 @@ Services
     -run and maintain database deployment
     -use cloud service provider of choice
     -experiment with new tools and features
-
