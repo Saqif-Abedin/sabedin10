@@ -1,6 +1,6 @@
 Saqif Abedin
 SoftDev
-LJ00: Le Voyage de Learnination avec Mongo, Première Phase
+LJ00: Le Voyage de Learnination avec Mongo, Première Phase/Chapter1
 
 Database: structured way to store and access Data
 NoSQL Database: related tables of Data  
