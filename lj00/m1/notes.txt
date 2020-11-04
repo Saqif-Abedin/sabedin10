@@ -8,7 +8,7 @@ NoSQL Database: related tables of Data
 MongoDB is a NoSQL documentDB: data is stored as documents
     -documents are stored in collection of documents
 
-Documents: A way tp prganize and store data as a set of field-value pairs
+Documents: A way to organize and store data as a set of field-value pairs
     -field is unique identifier for data points
     -value is data related to identifier
     example:

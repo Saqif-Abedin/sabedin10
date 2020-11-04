@@ -1,3 +1,64 @@
 Saqif Abedin
 SoftDev
 LJ00: Le Voyage de Learnination avec Mongo, Première Phase/Chapter2
+
+ JSON: JavaScript Standard Object Notation
+ mongoshell works in JSON
+
+ Format:
+    {
+        "key" : value,
+        "key" : value,
+        "key" : {               ##Subdocument
+            "key" : value,
+            "key" : value
+        }
+    }
+
+BSON: Binary JSON
+    -Bridges gao between binary representation and JSON
+    -Optimized for speed, space, flexibility
+    -Additional Data Type Support
+
+Data Stored in BSON, Viewed in JSON
+    -Export to a diff system: BSON
+    -Export to local machine: JSON
+
+JSON    
+    mongoimport --uri "<Atlas Cluster URI>"
+                --drop=<filename>.json
+
+    mongoexport --uri "<Atlas Cluster URI>"
+                    --collection=<collection name>
+                    --out=<filename>.json
+
+BSON    
+    #import
+    mongorestore --uri "<Atlas Cluster URI>"
+                     --drop dump
+    #export
+    mongodump --uri "<Atlas Cluster URI>"
+
+URI: Uniform Resource Identifier
+srv - establishes secure connection
+mongodb+srv://user:password@clusterURI.mongodb.net/database
+
+Data Explorer allows user to query data through GUI
+    -Queries require vlaid JSON
+    -Namespace: The concatenation of the database name and collection name
+
+Admin keeps track of existing user that have access to database
+
+show dbs
+use <collection name>
+show collections
+db.<collection name>.find({"key":"value"})
+    db.<collection name>.find({"key":"value", "key1":"value1"}) for more specificity
+it (iterates through cursor)
+    cursor: pointer to a result set of a query  
+    pointer: direct address of the memory location
+
+db.<collection name>.find(<query>).count()
+    returns number of documents that match the given query
+db.<collection name>.find(<query>).pretty()
+    returns documents that match query in better format for reading
