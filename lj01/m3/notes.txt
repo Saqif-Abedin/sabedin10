@@ -1,0 +1,8 @@
+Team DPS (Dragos Lup, Saqif Abedin, Pak Lau)
+SoftDev
+LJ01: Le Voyage de Learnination avec Mongo, Deuxième Phase/Chapter 3
+2020-10-29 to 2020-11-12
+
+Can use GUI to insert document to collection
+Every document has unique _id value
+All documents can be same but _id field is different
