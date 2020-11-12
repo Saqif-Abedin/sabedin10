@@ -6,3 +6,46 @@ LJ01: Le Voyage de Learnination avec Mongo, Deuxième Phase/Chapter 3
 Can use GUI to insert document to collection
 Every document has unique _id value
 All documents can be same but _id field is different
+
+Inserting New Documents
+ObjectId() is Default value for _id field
+
+duplicate key error: adding document with same _id value as existing document
+    fix: add --drop to remove collection before inserting to eliminate duplicate
+findOne() : looking for "some" document in collection
+deleting _id field will also avoid error
+
+You can add multiple documents at one time
+db.<collection>.insert([ {"test":1}, {"test":2}, {"test":3}])
+    *do not get duplicate key error if done more than once cuz auto 
+    generated _id value*
+
+db.<collection>.insert([ {"_id":1, "test:1}, {"_id":1,"test":2}, {"_id":3,"test":3}])
+first one will be inserted because
+Default behavior is to insert documents in order listed in array
+
+db.<collection>.insert([ {"_id":1, "test:1}, {"_id":1,"test":2}, {"_id":3,"test":3}], {"ordered": false})
+Now all documents with unique _id value will be inserted
+
+*if you insert document with nonexistent collection, collection will be created*
+
+updateOne() vs updateMany()
+
+db.zips.updateMany({ "city": "HUDSON" }, { "$inc": { "pop": 10 } })
+Update all documents in the zips collection where the city field is equal to "HUDSON" 
+by adding 10 to the current value of the "pop" field.
+
+db.zips.updateOne({ "zip": "12534" }, { "$set": { "pop": 17630 } })
+Update a single document in the zips collection where the zip field is equal to "12534" 
+by setting the value of the "pop" field to 17630.
+*if field doesn't exist but update is issued, field will be created*
+
+{ $push: { <field1>: <value1>, ... } }
+adds element to an array field
+
+deleteOne() vs deleteMany()
+*only use deleteOne when querying by _id value*
+
+Delete collections
+--drop <collection>.json
+db.<collection>.drop()
