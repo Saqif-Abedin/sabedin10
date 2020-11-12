@@ -1,0 +1,95 @@
+Team DPS (Dragos Lup, Saqif Abedin, Pak Lau)
+SoftDev
+LJ01: Le Voyage de Learnination avec Mongo, Deuxième Phase/Chapter 4
+2020-10-29 to 2020-11-12
+
+MQL Operators
+$inc, $set, $unset
+
+Query Operators
+additional ways to locate data
+$ has multiple uses
+Precedes MQL Operators
+Precedes aggregation pipeline stages
+Allows Access to Field Values
+
+Comparison Operators
+$eq         =
+$neq        !=
+$gt         >
+$lt         <
+$gte        >=
+$lte        <=
+
+{<field>: { <operator>: <value> } }
+
+use find() in shell
+equals operator is implicit
+
+Example:
+db.trips.find({ "tripduration": { "$lte" : 70 }, "usertype": { "$ne": "Subscriber" } }).pretty()
+
+db.trips.find({ "tripduration": { "$lte" : 70 }, "usertype": { "$eq": "Customer" }}).pretty()
+is the same as
+db.trips.find({ "tripduration": { "$lte" : 70 }, "usertype": "Customer" }).pretty()
+
+Logic Operators
+$and    All clauses matched
+$or     At least One matched
+$nor    All that fail to match both
+{<operator> : [{statement1},{statement2},...]}
+
+$not    Negates Query Requirement
+{$not: {statement}}
+
+$and is used as default operator
+{"$and": [{"student_id": {"$gt": 25}}, {"student_id" {"$lt":100}}]}
+same as
+{"student_id": {"$gt": 25}}, {"student_id" {"$lt":100}}
+same as
+{"student_id": {"$gt": 25, "$lt":100}}
+
+Use Explicit $and when including same operator more than once in Query
+
+Expressive
+$expr allows use of aggregation expressions within query language
+    {$expr: {<expression}}
+allows use of variables and conditional statements
+compare within document
+
+$ denotes use of operator
+$ addresses field value
+
+Aggregation syntax:
+{<operator>: {<field>, <value>}}
+
+$push: add element to an array
+       turns field into array if was diff type
+
+Array Operators
+{<array field>: {"$size": <number>}}
+Returns cursor with all documents where specified array field is given length
+{<array field>: {"$all": <array>}}
+Returns cursor with all documents in which specified array field contains all given elements
+regardless of order in array
+
+Querying with array match
+array returns only exact array matches
+Single element will return all documents where specified array field contains given element
+
+Projection Syntax
+db.<collection>.find({<query>}, {<projection>})
+1- include field
+0- exclude field
+db.<collection>.find({<query>}, {<field1>:1, <field2>:1 })
+db.<collection>.find({<query>}, {<field1>0, <field2>:0 })
+db.<collection>.find({<query>}, {<field1>:1, "_id": 0 })
+
+{<field>:{"$elemMatch": {<field>: <value> }}}
+Matches documents that contain array field with at least one element that matches query criteria
+or
+Projects only array elements with at least one element that matches criteria
+
+MQL uses dot-notation to specify address of nested elements in document
+Specifies position of element in array
+db.collection.find({"field 1.other field.also a field": "value"})
