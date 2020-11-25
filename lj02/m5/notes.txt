@@ -1,0 +1,27 @@
+Team RainingMarS (Saqif Abedin, Carlos Hernandez, Andrew Jiang)
+SoftDev
+LJ02: Le Voyage de Learnination avec Mongo, Troisième Phase/Chapter 5
+2020-11-13 to 2020-11-25
+
+password: m001-mongodb-basics
+
+Aggregation Framework
+    -query data in mongoDB
+    -more powerful than MQL
+Syntax
+db.listingsAndReviews.aggregate([
+                                  { "$match": { "amenities": "Wifi" } },
+                                  { "$project": { "price": 1,
+                                                  "address": 1,
+                                                  "_id": 0 }}]).pretty()
+pipeline, filters
+stages:
+$group: takes data, siphons into distinct reservoir
+{ "$group": { "_id": <expression>, //Group by expression
+                                                <accumulator1>: { <expression1> } } }
+
+sort() and limit() are cursor methods (also pretty() and count())
+db.zips.find().sort({ "pop": 1, "city": -1 })
+increasing "pop": 0 -> infinity     decreasing "city": "Z" -> "A"
+limit() without sort(): result with no guarantee of order
+limit() and sort(): miss some data

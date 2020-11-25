@@ -1,0 +1,4 @@
+Team RainingMarS (Saqif Abedin, Carlos Hernandez, Andrew Jiang)
+SoftDev
+LJ02: Le Voyage de Learnination avec Mongo, Troisième Phase/Chapter 6
+2020-11-13 to 2020-11-25
