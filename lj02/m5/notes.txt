@@ -25,3 +25,23 @@ db.zips.find().sort({ "pop": 1, "city": -1 })
 increasing "pop": 0 -> infinity     decreasing "city": "Z" -> "A"
 limit() without sort(): result with no guarantee of order
 limit() and sort(): miss some data
+
+Indexes: references to where something occurs/ data structure that stores small portion of collections data set 
+    -easy to traverse
+    -make queries more efficient
+    -build to support queries 
+    -avoid sorting
+
+Syntax
+    Single field: db.trips.createIndex({"birth year"})
+    Compound index: db.trips.createIndex({"start station id": 1, "birth year": 1})
+
+Data modeling: way to organize fields in document to support performane and queries
+Rule: Data is stored the way that it is used
+    Data  that is used together should be stored together
+
+Upsert: hybrid of update and insert
+    -default set to false
+    -if match: update; if no match:insert
+    -conditional updates
+db.collection.updateOne({<query>}, {<update>}, {üpsert":true})
