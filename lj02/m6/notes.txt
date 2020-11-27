@@ -2,3 +2,42 @@ Team RainingMarS (Saqif Abedin, Carlos Hernandez, Andrew Jiang)
 SoftDev
 LJ02: Le Voyage de Learnination avec Mongo, Troisième Phase/Chapter 6
 2020-11-13 to 2020-11-25
+
+Data Explorer Features
+Indexes:
+    -view, create, drop Indexes
+    -performance advisor
+
+Aggregation:
+    -build pipelines in UI
+    -can export pipeline in different languages
+
+Access
+    -Organization -> Projects
+    -Billing happens at Organization level
+    -teams assigned to projects
+
+Realm
+    -services for web or mobile applications
+    -help integrate data into any application
+
+Charts
+    -data visualizations
+
+Compass
+    -Don't touch admin, config, and local databases unless needed
+    -shows information of data
+
+    Documents
+        -view and filter data
+    Aggregation
+        -same as in explorer
+    Schema
+        -learn more information
+        -breakdown of data (ex: nested documents)
+        -dates created/added
+    Index
+        -create Indexes
+        -choose how they're built
+    Explain plan
+        -explains how data looking for was found and retrieved
